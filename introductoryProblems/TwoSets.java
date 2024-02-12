@@ -6,9 +6,7 @@ public class TwoSets {
   public static void main(String[] args) throws IOException {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     n = Integer.parseInt(reader.readLine());
-    if (n * (n + 1) / 2 % 2 != 0) {
-      System.out.println("NO");
-    } else {
+    if (n * (n + 1) / 2 % 2 == 0) {
       System.out.println("YES");
       if (n % 2 == 0) {
         print(new StringBuilder(), 1, n);
@@ -17,6 +15,8 @@ public class TwoSets {
         print(new StringBuilder("1 2 "), 4, n);
         print(new StringBuilder("3 "), 5, n - 1);
       }
+    } else {
+      System.out.println("NO");
     }
   }
 
