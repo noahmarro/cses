@@ -3,19 +3,11 @@ import java.util.Scanner;
 public class WeirdAlgorithm {
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
-    long n = input.nextInt();
+    long n = input.nextLong();
     input.close();
-    wa(n);
-  }
-
-  private static void wa(long n) {
-    System.out.print(n + " ");
-    if (n > 1) {
-      if (n % 2 == 0) {
-        wa(n / 2);
-      } else {
-        wa(n * 3 + 1);
-      }
+    while (n >= 1) {
+      System.out.print(n + " ");
+      n = n % 2 == 0 ? n / 2 : n > 1 ? n * 3 + 1 : 0;
     }
   }
 }
